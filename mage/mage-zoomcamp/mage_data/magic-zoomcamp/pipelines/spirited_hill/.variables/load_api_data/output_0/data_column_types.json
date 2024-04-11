@@ -1,1 +1,0 @@
-{"InvoiceNo": "str", "StockCode": "str", "Description": "str", "Quantity": "Int64", "InvoiceDate": "datetime64[ns]", "UnitPrice": "float64", "CustomerID": "str", "Country": "str"}
