@@ -1,0 +1,1 @@
+{"invoice_no": "str", "stock_code": "str", "description": "str", "quantity": "Int64", "invoice_datetime": "datetime64[ns]", "unit_price": "float64", "customer_id": "str", "country": "str", "total_price": "Float64", "time": "time", "month": "str", "day": "str", "year": "int64", "invoice_date": "category"}
