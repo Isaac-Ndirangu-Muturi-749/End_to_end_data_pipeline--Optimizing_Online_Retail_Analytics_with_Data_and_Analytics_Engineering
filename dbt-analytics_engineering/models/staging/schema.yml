@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: staging
+    database: direct-disk-412820
+    schema: online_retail
+
+    tables:
+      - name: online_retail_data
+
+
+# Based on the provided column descriptions, here are recommended data types for each column to facilitate analysis:
+
+# - `invoice_no`: STRING (assuming it's an alphanumeric identifier)
+# - `stock_code`: STRING (assuming it's an alphanumeric identifier)
+# - `description`: STRING (assuming it's a textual description)
+# - `quantity`: INTEGER (assuming it represents whole numbers)
+# - `invoice_datetime`: TIMESTAMP (assuming it represents date and time)
+# - `unit_price`: FLOAT or DECIMAL (depending on precision requirements)
+# - `customer_id`: STRING (assuming it's an identifier)
+# - `country`: STRING (assuming it's a textual description)
+# - `total_price`: FLOAT or DECIMAL (depending on precision requirements)
+# - `time`: TIME (assuming it represents time of the day)
+# - `month`: STRING (assuming it's the name of the month)
+# - `day`: STRING (assuming it's the name of the day)
+# - `year`: INTEGER (assuming it represents the year)
+
+# These data types are selected based on the assumed nature of the data in each column. It's important to verify these assumptions with the actual data and adjust the data types accordingly to ensure accuracy and efficiency in analysis.
