@@ -38,4 +38,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   online_retail_data_analytics_engineering:
     # Applies to all files under models/example/
-
+    staging:
+      materialized: view
+    core:
+      materialized: table
