@@ -387,6 +387,7 @@ partitioned by 'invoice_datetime' and clustered by 'customer_id'
 
 # (CI/CD)-CONTINOUS-INTERGRATION-AND-DEPLOYMENT
 
+![](images/cloud_run.png)
 
 #### Files and Directories
 ```
