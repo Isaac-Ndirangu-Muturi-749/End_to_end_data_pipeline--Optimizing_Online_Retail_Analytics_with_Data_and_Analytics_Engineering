@@ -1,4 +1,4 @@
-Yes, there are several popular eCommerce datasets that are commonly used for data analysis and machine learning projects. One of the most well-known and widely used datasets is the "Online Retail" dataset from the UCI Machine Learning Repository. This dataset contains transactional data from an online retail platform and is suitable for analyzing sales trends, customer behavior, and product performance.
+A well-known dataset is the "Online Retail" dataset from the UCI Machine Learning Repository. This dataset contains transactional data from an online retail platform and is suitable for analyzing sales trends, customer behavior, and product performance.
 
 Here are some details about the "Online Retail" dataset:
 
