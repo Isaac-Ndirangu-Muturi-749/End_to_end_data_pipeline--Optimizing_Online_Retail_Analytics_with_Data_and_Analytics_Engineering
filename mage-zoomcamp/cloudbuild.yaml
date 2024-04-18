@@ -1,7 +1,7 @@
 steps:
 # running docker-compose
 - name: 'docker/compose:1.29.2'
-  entrypoint: 'docker-compose -f /mage-zoomcamp/docker-compose.yml'
+  entrypoint: 'docker-compose -f mage-zoomcamp/cloudbuild.yaml'
   args: ['up', '-d']
 
 options:
