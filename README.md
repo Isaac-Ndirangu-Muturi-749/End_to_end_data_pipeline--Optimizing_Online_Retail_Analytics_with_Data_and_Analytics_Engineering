@@ -241,7 +241,7 @@ Following successful CI, the CD pipeline takes over. It automatically deploys th
 
 LINK: https://lookerstudio.google.com/reporting/01e1481a-ff43-49fc-b04a-29bd75afd77d
 
-[View Online Retail Data Report](capstone_de_zoom/online_retail_data_Report.pdf)
+![View Online Retail Data Report](images/online_retail_analytics.png)
 
 
 ## **CONCLUSION**
