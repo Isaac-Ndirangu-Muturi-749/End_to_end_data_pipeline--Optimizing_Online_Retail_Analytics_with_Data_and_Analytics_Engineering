@@ -167,3 +167,156 @@ However, implementing these could significantly enhance the quality of your proj
 * Add tests
 * Use make
 * Add CI/CD pipeline
+
+
+
+
+$ tree
+.
+├── README.md
+├── dashboard
+├── data
+│   ├── Online Retail.xlsx
+│   └── README.md
+├── dbt-analytics_engineering(Data Build Tool)
+│   ├── README.md
+│   ├── analyses
+│   ├── dbt_project.yml
+│   ├── macros
+│   ├── models
+│   │   ├── core
+│   │   │   ├── fact_online_retail_data_partitioned_clustered.sql
+│   │   │   └── fact_online_retail_data_unpartitioned.sql
+│   │   └── staging
+│   │       ├── schema.yml
+│   │       └── stg_online_retail_data.sql
+│   ├── package-lock.yml
+│   ├── packages.yml
+│   ├── seeds
+│   ├── snapshots
+│   └── tests
+├── mage-ai-Terraform-Infrastructure-As-Code
+│   ├── LICENSE
+│   ├── README.md
+│   ├── db.tf
+│   ├── direct-disk-412820-2333e42872f1.json
+│   ├── fs.tf
+│   ├── load_balancer.tf
+│   ├── main.tf
+│   ├── terraform.tfstate
+│   ├── terraform.tfstate.backup
+│   └── variables.tf
+└── mage-ai-Workflow-Orchestration
+    ├── Dockerfile
+    ├── README.md
+    ├── cloudbuild.yaml
+    ├── direct-disk-412820-2333e42872f1.json
+    ├── docker-compose.yml
+    ├── mage_data
+    │   └── magic-zoomcamp
+    │       ├── mage-ai.db
+    │       └── pipelines
+    │           ├── example_pipeline
+    │           ├── gcs_to_bigquery
+    │           ├── loading_from_api_transformations_to_gcs_partitioned
+    │           ├── loading_from_google_cloud_storage_to_bigquery_table
+    │           ├── online_retail_data_loading_api_processing_to_gcs_partitioned
+    │           ├── spirited_familiar
+    │           └── spirited_hill
+    ├── magic-zoomcamp
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   └── __init__.cpython-310.pyc
+    │   ├── charts
+    │   │   ├── __init__.py
+    │   │   └── __pycache__
+    │   │       └── __init__.cpython-310.pyc
+    │   ├── custom
+    │   │   ├── __init__.py
+    │   │   └── __pycache__
+    │   │       └── __init__.cpython-310.pyc
+    │   ├── data_exporters
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-310.pyc
+    │   │   │   ├── cosmic_firefly.cpython-310.pyc
+    │   │   │   ├── export_titanic_clean.cpython-310.pyc
+    │   │   │   └── soulful_night.cpython-310.pyc
+    │   │   ├── export_data_to_google_bigquery.py
+    │   │   ├── export_data_to_google_cloud_stoage_partitioned.py
+    │   │   └── export_titanic_clean.py
+    │   ├── data_loaders
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-310.pyc
+    │   │   │   ├── load_api_data.cpython-310.pyc
+    │   │   │   ├── load_titanic.cpython-310.pyc
+    │   │   │   ├── moonlit_water.cpython-310.pyc
+    │   │   │   └── red_portal.cpython-310.pyc
+    │   │   ├── daring_ancient.py
+    │   │   ├── enigmatic_sky.py
+    │   │   ├── load_data_from_api.py
+    │   │   ├── load_data_from_google_cloud_storage.py
+    │   │   ├── load_titanic.py
+    │   │   ├── moonlit_water.py
+    │   │   ├── polished_realm.py
+    │   │   ├── refined_spellcaster.py
+    │   │   ├── relaxed_monk.sql
+    │   │   ├── timeless_sunrise.py
+    │   │   └── utopian_ancient.py
+    │   ├── dbt
+    │   │   └── profiles.yml
+    │   ├── dbts
+    │   │   ├── __init__.py
+    │   │   ├── humble_ancient.yaml
+    │   │   ├── humble_sword.yaml
+    │   │   └── mindful_silversmith.yaml
+    │   ├── extensions
+    │   │   ├── __init__.py
+    │   │   └── __pycache__
+    │   │       └── __init__.cpython-310.pyc
+    │   ├── interactions
+    │   │   ├── __init__.py
+    │   │   └── __pycache__
+    │   │       └── __init__.cpython-310.pyc
+    │   ├── io_config.yaml
+    │   ├── metadata.yaml
+    │   ├── pipelines
+    │   │   ├── __init__.py
+    │   │   ├── example_pipeline
+    │   │   │   ├── __init__.py
+    │   │   │   ├── __pycache__
+    │   │   │   │   └── __init__.cpython-310.pyc
+    │   │   │   └── metadata.yaml
+    │   │   ├── loading_from_api_transformations_to_gcs_partitioned
+    │   │   │   ├── __init__.py
+    │   │   │   ├── __pycache__
+    │   │   │   │   └── __init__.cpython-310.pyc
+    │   │   │   └── metadata.yaml
+    │   │   └── loading_from_google_cloud_storage_to_bigquery_table
+    │   │       ├── __init__.py
+    │   │       ├── __pycache__
+    │   │       │   └── __init__.cpython-310.pyc
+    │   │       └── metadata.yaml
+    │   ├── requirements.txt
+    │   ├── scratchpads
+    │   │   ├── __init__.py
+    │   │   └── __pycache__
+    │   │       └── __init__.cpython-310.pyc
+    │   ├── transformers
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-310.pyc
+    │   │   │   ├── fill_in_missing_values.cpython-310.pyc
+    │   │   │   └── radiant_destiny.cpython-310.pyc
+    │   │   ├── fill_in_missing_values.py
+    │   │   └── transform_and_clean_api_data.py
+    │   └── utils
+    │       ├── __init__.py
+    │       └── __pycache__
+    │           └── __init__.cpython-310.pyc
+    └── requirements.txt
+
+52 directories, 91 files
+ndirangu749@de-zoomcamp ~/capstone_de_zoom
+$ 
