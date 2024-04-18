@@ -97,7 +97,7 @@ I created two main pipelines to handle the processing of my dataset:
 ![](images/loading_from_api_transformations_to_gcs_partitioned.png)
 
 - **Pipelines Directory**:
-  ```
+```
 └── mage-ai-Workflow-Orchestration
     ├── magic-zoomcamp
         ├── pipelines
@@ -108,7 +108,7 @@ I created two main pipelines to handle the processing of my dataset:
         |   └── transform_and_clean_api_data.py
         └── data_exporters
             └── export_data_to_google_cloud_stoage_partitioned.py
-  ```
+```
 
 - **Pipeline Components**:
   - **Data Loaders**:
@@ -123,7 +123,7 @@ I created two main pipelines to handle the processing of my dataset:
 ![](images/loading_from_google_cloud_storage_to_bigquery_table.png)
 
 - **Pipelines Directory**:
-  ```
+```
 └── mage-ai-Workflow-Orchestration
     ├── magic-zoomcamp
         ├── pipelines
@@ -132,7 +132,7 @@ I created two main pipelines to handle the processing of my dataset:
         │   └── load_data_from_google_cloud_storage.py
         └─ data_exporters
             └── export_data_to_google_bigquery.py
-  ```
+```
 
 - **Pipeline Components**:
   - **Data Loaders**:
@@ -149,8 +149,8 @@ I configured triggers or schedules within Mage to orchestrate the execution of m
 ## **DATA TRANSFORMATIONS WITH DBT**
 
 In this section, I leverage dedicated data transformation tool DBT (Data Build Tool) to prepare my data for analytics. dbt enables us to apply transformations, ensure data quality, and maintain consistency through validation and cleansing processes. Let's delve into the details:
+![dbt Project Overview](images/dbt_project_overview.png)
 
-![](images/dbt_lineage_graph_DAG.png)
 
 #### Files and Directories
 ```
@@ -168,9 +168,9 @@ In this section, I leverage dedicated data transformation tool DBT (Data Build T
 
 ### Transformation Process
 
-![dbt Project Overview](images/dbt_project_overview.png)
+![](images/dbt_lineage_graph_DAG.png)
 
-I've meticulously organized my transformations into dbt models within the project structure. These models serve the purpose of converting raw data from staging tables into structured formats suitable for analytics and reporting. Let's dive into the details of my transformation process:
+I've organized my transformations into dbt models within the project structure. These models serve the purpose of converting raw data from staging tables into structured formats suitable for analytics and reporting. Let's dive into the details of my transformation process:
 
 1. **Staging Tables**:
 
@@ -182,7 +182,7 @@ I've meticulously organized my transformations into dbt models within the projec
 
    - Within the `core` directory, I've crafted dbt models that take charge of refining staged data into structured, analytics-ready formats. These models typically represent fact and dimension tables, shaping the foundation for insightful analysis and reporting.
 
-   - Examples include:
+   - Includes:
      - `fact_online_retail_data_partitioned_clustered.sql`
        ![Fact Table: fact_online_retail_data_unpartitioned](images/fact_online_retail_data_unpartitioned.png)
 
