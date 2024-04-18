@@ -222,23 +222,26 @@ During the CI phase, the defined workflow in `cloudbuild.yaml` triggers whenever
 Following successful CI, the CD pipeline takes over. It automatically deploys the updated artifacts, ensuring the continuous delivery of the data pipeline to the production environment. This automated deployment process eliminates manual interventions, reducing the risk of errors and accelerating the time-to-market for new features and enhancements.
 
 
-# **BUILD THE DASHBOARD**:
-   - Choose a BI tool such as Data Studio for creating the dashboard.
+# **DASHBOARD**:
+   - Using Looker Studio as BI tool for creating the dashboard.
    - Design intuitive visualizations that provide insights into the processed data.
-
-* Building a dashboard to visualize the data
-
 
 #### Files and Directories
 
 ```
 ├── Looker_studio_Dashboard
+    └── online_retail_data_Report.pdf
 ```
 
-- 1 graph that shows the distribution of some categorical data
-- 1 graph that shows the distribution of the data across a temporal line
+### graphs
+* What products sold the most?
+* Which countries have more customers?
+* which day has more number of sales?
+* What was the best month for sales?
 
+LINK: https://lookerstudio.google.com/reporting/01e1481a-ff43-49fc-b04a-29bd75afd77d
 
+[View Online Retail Data Report](capstone_de_zoom/online_retail_data_Report.pdf)
 
 
 ## **CONCLUSION**
