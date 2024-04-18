@@ -5,12 +5,3 @@
     options:
       logging: CLOUD_LOGGING_ONLY  # Or set build.logs_bucket or build.options.default_logs_bucket_behavior
       serviceAccount: mage-zoomcamp@direct-disk-412820.iam.gserviceaccount.com
-
-
-builds:
-- trigger: # Your trigger configuration
-  builds:
-  - steps: # Your build steps
-    options:
-      logging: CLOUD_LOGGING_ONLY  # Or set build.logs_bucket or build.options.default_logs_bucket_behavior
-      serviceAccount: your_custom_service_account@your_project.iam.gserviceaccount.com
