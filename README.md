@@ -388,3 +388,14 @@ staging
 core - fact tables
 
 
+![](images/data_analytics_pipeline.png)
+![](images/dbt_deploy_job_12hrs.png)
+![](images/dbt_lineage_graph_DAG.png)
+![](images/dbt_project_overview.png)
+![](images/fact_online_retail_data_partitioned_clustered.png)
+![](images/fact_online_retail_data_unpartitioned.png)
+![](images/loading_from_api_transformations_to_gcs_partitioned.png)
+![](images/loading_from_google_cloud_storage_to_bigquery_table.png)
+![](images/pipelines_in_mage.png)
+![](images/stg_online_retail_data.png)
+![](images/trigger_for_mage.png)
