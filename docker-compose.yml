@@ -7,7 +7,7 @@ services:
       - .env
     build:
       context: .
-      dockerfile: mage-zoomcamp/Dockerfile
+      dockerfile: Dockerfile
     environment:
       USER_CODE_PATH: /home/src/${PROJECT_NAME}
       POSTGRES_DBNAME: ${POSTGRES_DBNAME}
