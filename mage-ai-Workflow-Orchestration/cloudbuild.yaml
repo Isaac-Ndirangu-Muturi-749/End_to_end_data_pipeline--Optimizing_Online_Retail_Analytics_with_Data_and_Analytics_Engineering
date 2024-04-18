@@ -1,8 +1,0 @@
-steps:
-# running docker-compose
-- name: 'docker/compose:1.29.2'
-  args: ['up', '-d']
-
-options:
- logging: CLOUD_LOGGING_ONLY
-serviceAccount: mage-zoomcamp@direct-disk-412820.iam.gserviceaccount.com
