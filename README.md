@@ -196,7 +196,6 @@ $ tree
 │   ├── snapshots
 │   └── tests
 ├── mage-ai-Terraform-Infrastructure-As-Code
-│   ├── LICENSE
 │   ├── README.md
 │   ├── db.tf
 │   ├── direct-disk-412820-2333e42872f1.json
@@ -319,4 +318,4 @@ $ tree
 
 52 directories, 91 files
 ndirangu749@de-zoomcamp ~/capstone_de_zoom
-$ 
+$
