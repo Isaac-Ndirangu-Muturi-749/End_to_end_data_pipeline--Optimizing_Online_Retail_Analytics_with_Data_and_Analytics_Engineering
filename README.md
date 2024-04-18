@@ -1,69 +1,276 @@
+# End_to_end_data_pipeline---Optimizing_Online_Retail_Analytics_with_Data_and_Analytics_Engineering
+
+![](images/data_analytics_pipeline.png)
+
+## PROJECT STRUCTURE
+.
+├── (CI.CD)-Continous-Intergration-and-Deployment
+│   └── cloudbuild.yaml
+├── Looker_studio_Dashboard
+├── README.md
+├── data
+│   ├── Online Retail.xlsx
+│   └── README.md
+├── dbt-Analytics_Engineering(Data Build Tool)
+│   ├── README.md
+│   ├── analyses
+│   ├── dbt_project.yml
+│   ├── macros
+│   ├── models
+│   │   ├── core
+│   │   │   ├── fact_online_retail_data_partitioned_clustered.sql
+│   │   │   └── fact_online_retail_data_unpartitioned.sql
+│   │   └── staging
+│   │       ├── schema.yml
+│   │       └── stg_online_retail_data.sql
+│   ├── package-lock.yml
+│   ├── packages.yml
+│   ├── seeds
+│   ├── snapshots
+│   └── tests
+├── images
+│   ├── data_analytics_pipeline.png
+│   ├── data_analytics_pipeline.png:Zone.Identifier
+│   ├── dbt_deploy_job_12hrs.png
+│   ├── dbt_lineage_graph_DAG.png
+│   ├── dbt_project_overview.png
+│   ├── fact_online_retail_data_partitioned_clustered.png
+│   ├── fact_online_retail_data_unpartitioned.png
+│   ├── loading_from_api_transformations_to_gcs_partitioned.png
+│   ├── loading_from_google_cloud_storage_to_bigquery_table.png
+│   ├── pipelines_in_mage.png
+│   ├── stg_online_retail_data.png
+│   └── trigger_for_mage.png
+├── mage-ai-Terraform-Infrastructure-As-Code
+│   ├── README.md
+│   ├── db.tf
+│   ├── direct-disk-412820-2333e42872f1.json
+│   ├── fs.tf
+│   ├── load_balancer.tf
+│   ├── main.tf
+│   ├── terraform.tfstate
+│   ├── terraform.tfstate.backup
+│   └── variables.tf
+└── mage-ai-Workflow-Orchestration
+    ├── Dockerfile
+    ├── README.md
+    ├── direct-disk-412820-2333e42872f1.json
+    ├── docker-compose.yml
+    ├── mage_data
+    │   └── magic-zoomcamp
+    │       ├── mage-ai.db
+    │       └── pipelines
+    │           ├── example_pipeline
+    │           ├── gcs_to_bigquery
+    │           ├── loading_from_api_transformations_to_gcs_partitioned
+    │           ├── loading_from_google_cloud_storage_to_bigquery_table
+    │           ├── online_retail_data_loading_api_processing_to_gcs_partitioned
+    │           ├── spirited_familiar
+    │           └── spirited_hill
+    ├── magic-zoomcamp
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   └── __init__.cpython-310.pyc
+    │   ├── charts
+    │   │   ├── __init__.py
+    │   │   └── __pycache__
+    │   │       └── __init__.cpython-310.pyc
+    │   ├── custom
+    │   │   ├── __init__.py
+    │   │   └── __pycache__
+    │   │       └── __init__.cpython-310.pyc
+    │   ├── data_exporters
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-310.pyc
+    │   │   │   ├── cosmic_firefly.cpython-310.pyc
+    │   │   │   ├── export_titanic_clean.cpython-310.pyc
+    │   │   │   └── soulful_night.cpython-310.pyc
+    │   │   ├── export_data_to_google_bigquery.py
+    │   │   └── export_data_to_google_cloud_stoage_partitioned.py
+    │   ├── data_loaders
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-310.pyc
+    │   │   │   ├── load_api_data.cpython-310.pyc
+    │   │   │   ├── load_titanic.cpython-310.pyc
+    │   │   │   ├── moonlit_water.cpython-310.pyc
+    │   │   │   └── red_portal.cpython-310.pyc
+    │   │   ├── daring_ancient.py
+    │   │   ├── enigmatic_sky.py
+    │   │   ├── load_data_from_api.py
+    │   │   ├── load_data_from_google_cloud_storage.py
+    │   │   ├── load_titanic.py
+    │   │   ├── moonlit_water.py
+    │   │   ├── polished_realm.py
+    │   │   ├── refined_spellcaster.py
+    │   │   ├── relaxed_monk.sql
+    │   │   ├── timeless_sunrise.py
+    │   │   └── utopian_ancient.py
+    │   ├── dbt
+    │   │   └── profiles.yml
+    │   ├── dbts
+    │   │   ├── __init__.py
+    │   │   ├── humble_ancient.yaml
+    │   │   ├── humble_sword.yaml
+    │   │   └── mindful_silversmith.yaml
+    │   ├── extensions
+    │   │   ├── __init__.py
+    │   │   └── __pycache__
+    │   │       └── __init__.cpython-310.pyc
+    │   ├── interactions
+    │   │   ├── __init__.py
+    │   │   └── __pycache__
+    │   │       └── __init__.cpython-310.pyc
+    │   ├── io_config.yaml
+    │   ├── metadata.yaml
+    │   ├── pipelines
+    │   │   ├── __init__.py
+    │   │   ├── loading_from_api_transformations_to_gcs_partitioned
+    │   │   │   ├── __init__.py
+    │   │   │   ├── __pycache__
+    │   │   │   │   └── __init__.cpython-310.pyc
+    │   │   │   └── metadata.yaml
+    │   │   └── loading_from_google_cloud_storage_to_bigquery_table
+    │   │       ├── __init__.py
+    │   │       ├── __pycache__
+    │   │       │   └── __init__.cpython-310.pyc
+    │   │       └── metadata.yaml
+    │   ├── requirements.txt
+    │   ├── scratchpads
+    │   │   ├── __init__.py
+    │   │   └── __pycache__
+    │   │       └── __init__.cpython-310.pyc
+    │   ├── transformers
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-310.pyc
+    │   │   │   ├── fill_in_missing_values.cpython-310.pyc
+    │   │   │   └── radiant_destiny.cpython-310.pyc
+    │   │   └── transform_and_clean_api_data.py
+    │   └── utils
+    │       ├── __init__.py
+    │       └── __pycache__
+    │           └── __init__.cpython-310.pyc
+    └── requirements.txt
 
 
 
-2. **Select Datasets**: Choose datasets that are suitable for building a data pipeline and dashboard. Look for datasets with sufficient volume, variety, and relevance to demonstrate your skills.
+## DATASET**:
+Choose datasets that are suitable for building a data pipeline and dashboard. Look for datasets with sufficient volume, variety, and relevance to demonstrate your skills.
 
-3. **Design the Data Pipeline**:
-   - Decide whether to implement a batch or stream processing pipeline based on your preferences and the nature of the data.
+A well-known dataset is the "Online Retail" dataset from the UCI Machine Learning Repository. This dataset contains transactional data from an online retail platform and is suitable for analyzing sales trends, customer behavior, and product performance.
+
+Here are some details about the "Online Retail" dataset:
+
+- **Source**: UCI Machine Learning Repository
+- **Description**: This dataset contains transactional data from an online retail store based in the United Kingdom. The data includes customer information, product details, invoice numbers, transaction dates, and sales quantities. It covers transactions that occurred between 01/12/2010 and 09/12/2011.
+- **Features**: The dataset includes attributes such as InvoiceNo, StockCode, Description, Quantity, InvoiceDate, UnitPrice, CustomerID, and Country.
+- **Format**: The dataset is typically provided in a CSV (Comma Separated Values) format.
+- **Size**: The dataset is relatively small, with around 500,000 records.
+
+You can find the "Online Retail" dataset on the UCI Machine Learning Repository website. Here is the direct link: [Online Retail Dataset](https://archive.ics.uci.edu/ml/datasets/online+retail).
+
+This dataset is popular among data scientists and analysts for exploring eCommerce sales data, performing market basket analysis, and building recommendation systems. It's a great choice for your data engineering project as it provides rich transactional data that can be used for various analyses and insights.
+
+
+
+
+# **INFRASTRUCTURE AS CODE (IaC)**:
+   - Use Infrastructure as Code (IaC) tools like Terraform to provision cloud resources.
+
+#### Terraform
+[Terraform](https://www.terraform.io/) is an open-source infrastructure as code software tool created by HashiCorp. It allows users to define and provision data center infrastructure using a high-level configuration language known as HashiCorp Configuration Language (HCL).
+
+#### Project Structure
+```
+├── mage-ai-Terraform-Infrastructure-As-Code
+│   ├── README.md
+│   ├── db.tf
+│   ├── fs.tf
+│   ├── load_balancer.tf
+│   ├── main.tf
+│   └── variables.tf
+```
+
+#### Files and Directories
+
+- `db.tf`: Defines resources related to the database setup, including instance type, storage, and access permissions.
+- `fs.tf`: Defines resources related to file storage, such as buckets and access controls.
+- `load_balancer.tf`: Defines resources related to load balancers and networking configurations.
+- `main.tf`: The main Terraform configuration file that orchestrates the provisioning of various resources.
+- `variables.tf`: Defines input variables used in the Terraform configuration files.
+
+#### Usage
+1. **Installation**: Ensure Terraform is installed on your local machine.
+2. **Configuration**: Modify the `.tf` files to match your desired infrastructure configuration.
+3. **Initialization**: Run `terraform init` to initialize the working directory containing Terraform configuration files.
+4. **Planning**: Run `terraform plan` to create an execution plan. This step is optional but recommended to verify changes before applying them.
+5. **Execution**: Run `terraform apply` to apply the changes required to reach the desired state of the configuration.
+6. **Verification**: After applying changes, verify that the infrastructure has been provisioned correctly.
+7. **Cleanup**: When done, run `terraform destroy` to destroy all the resources defined in the Terraform configuration.
+
+
+# **DESIGN THE DATA PIPELINE**:
+   - Decide whether to implement a batch  pipeline based on your preferences and the nature of the data.
    - Choose appropriate cloud services and infrastructure tools for data storage, processing, and orchestration.
    - Define the steps for data ingestion, transformation, loading into data lakes and data warehouses, and dashboard creation.
 
-4. **Set Up Infrastructure**:
-   - Use Infrastructure as Code (IaC) tools like Terraform or CloudFormation to provision cloud resources.
-   - Set up data storage solutions such as AWS S3, Azure Data Lake Storage, or Google Cloud Storage for the data lake.
-   - Configure data warehouses like BigQuery, Snowflake, or Redshift for storing transformed data.
+* **Batch**: If you want to run things periodically (/daily) in mage
+
+![](images/loading_from_api_transformations_to_gcs_partitioned.png)
+
+└── mage-ai-Workflow-Orchestration
+    ├── magic-zoomcamp
+        ├── pipelines
+        │   └── loading_from_api_transformations_to_gcs_partitioned
+        ├── data_loaders
+        │   └── load_data_from_api.py
+        ├── transformers
+        |   └── transform_and_clean_api_data.py
+        └── data_exporters
+            └── export_data_to_google_cloud_stoage_partitioned.py
+
+
+
+![](images/loading_from_google_cloud_storage_to_bigquery_table.png)
+
+└── mage-ai-Workflow-Orchestration
+    ├── magic-zoomcamp
+        ├── pipelines
+        │   └── loading_from_google_cloud_storage_to_bigquery_table
+        ├── data_loaders
+        │   └── load_data_from_google_cloud_storage.py
+        └─ data_exporters
+            └── export_data_to_google_bigquery.py
+
+![](images/trigger_for_mage.png)
+
+* **Batch**: If you want to run things periodically (/daily) in mage
+
+
+
+
 
 5. **Implement Data Pipelines**:
-   - Develop batch processing pipelines using tools like Spark, Flink, or AWS Batch for ETL jobs.
-   - For stream processing, utilize technologies like Kafka, Pulsar, or AWS Kinesis for real-time data ingestion and processing.
-   - Implement workflow orchestration using tools such as Apache Airflow, Prefect, or AWS Step Functions to manage pipeline execution.
+   - Implement workflow orchestration using tools such as Mage to Develop batch processing and managing pipeline execution.
 
 6. **Perform Data Transformations**:
-   - Apply transformations using SQL, Spark, or dedicated data transformation tools like dbt to prepare data for analytics.
+   - Apply transformations using dedicated data transformation tools like dbt to prepare data for analytics.
    - Ensure data quality and consistency through validation and cleansing processes.
 
 7. **Build the Dashboard**:
-   - Choose a BI tool such as Data Studio, Metabase, or Tableau for creating the dashboard.
+   - Choose a BI tool such as Data Studio for creating the dashboard.
    - Design intuitive visualizations that provide insights into the processed data.
-   - Incorporate interactive elements and filtering options for user-friendly exploration.
 
 8. **Documentation and Testing**:
    - Document the project setup, data pipeline architecture, and dashboard components in a README file.
-   - Write unit tests for pipeline components to validate data processing logic and ensure reliability.
-   - Conduct end-to-end testing to verify the correctness and performance of the entire pipeline.
 
 
-```
-project/
-│
-├── data/
-│   ├── raw/            # Raw data files
-│   ├── processed/      # Processed data files
-│   ├── schema/         # Schema definitions
-│   └── dashboard/      # Dashboard data
-│
-├── scripts/            # Scripts for data processing and pipeline orchestration
-│   ├── batch_pipeline.py
-│   ├── stream_pipeline.py
-│   ├── data_transformations.py
-│   └── dashboard_builder.py
-│
-├── infrastructure/     # Infrastructure as Code (IaC) files
-│   ├── terraform/
-│   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   └── outputs.tf
-│
-├── docs/               # Project documentation
-│   └── README.md
-│
-└── dashboard/          # Dashboard visualization files
-    ├── dashboard_config.json
-    └── index.html
-```
 
 
-3. eCommerce Sales Data: Transactional data from an online retail platform, enabling analysis of sales trends, customer behavior, and product performance.
+
+3. Online Retail Data: Transactional data from an online retail platform, enabling analysis of sales trends, customer behavior, and product performance.
 
 
 
@@ -388,14 +595,11 @@ staging
 core - fact tables
 
 
-![](images/data_analytics_pipeline.png)
 ![](images/dbt_deploy_job_12hrs.png)
 ![](images/dbt_lineage_graph_DAG.png)
 ![](images/dbt_project_overview.png)
 ![](images/fact_online_retail_data_partitioned_clustered.png)
 ![](images/fact_online_retail_data_unpartitioned.png)
-![](images/loading_from_api_transformations_to_gcs_partitioned.png)
-![](images/loading_from_google_cloud_storage_to_bigquery_table.png)
+
 ![](images/pipelines_in_mage.png)
 ![](images/stg_online_retail_data.png)
-![](images/trigger_for_mage.png)
