@@ -2,6 +2,5 @@
   # running docker-compose
   - name: 'docker/compose:1.29.2'
     args: ['up', '-d']
-    options:
-      logging: CLOUD_LOGGING_ONLY  # Or set build.logs_bucket or build.options.default_logs_bucket_behavior
-      serviceAccount: mage-zoomcamp@direct-disk-412820.iam.gserviceaccount.com
+    logging: CLOUD_LOGGING_ONLY  # Or set build.logs_bucket or build.options.default_logs_bucket_behavior
+    serviceAccount: mage-zoomcamp@direct-disk-412820.iam.gserviceaccount.com
