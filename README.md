@@ -3,11 +3,12 @@
 ![](images/data_analytics_pipeline.png)
 
 ## PROJECT STRUCTURE
+```
 .
+├── README.md
 ├── (CI.CD)-Continous-Intergration-and-Deployment
 │   └── cloudbuild.yaml
 ├── Looker_studio_Dashboard
-├── README.md
 ├── data
 │   ├── Online Retail.xlsx
 │   └── README.md
@@ -153,11 +154,18 @@
     │       └── __pycache__
     │           └── __init__.cpython-310.pyc
     └── requirements.txt
-
+```
 
 
 ## DATASET**:
 Choose datasets that are suitable for building a data pipeline and dashboard. Look for datasets with sufficient volume, variety, and relevance to demonstrate your skills.
+
+#### Files and Directories
+```
+├── data
+│   ├── Online Retail.xlsx
+│   └── README.md
+```
 
 A well-known dataset is the "Online Retail" dataset from the UCI Machine Learning Repository. This dataset contains transactional data from an online retail platform and is suitable for analyzing sales trends, customer behavior, and product performance.
 
@@ -182,7 +190,7 @@ This dataset is popular among data scientists and analysts for exploring eCommer
 #### Terraform
 [Terraform](https://www.terraform.io/) is an open-source infrastructure as code software tool created by HashiCorp. It allows users to define and provision data center infrastructure using a high-level configuration language known as HashiCorp Configuration Language (HCL).
 
-#### Project Structure
+#### Files and Directories
 ```
 ├── mage-ai-Terraform-Infrastructure-As-Code
 │   ├── README.md
@@ -193,13 +201,6 @@ This dataset is popular among data scientists and analysts for exploring eCommer
 │   └── variables.tf
 ```
 
-#### Files and Directories
-
-- `db.tf`: Defines resources related to the database setup, including instance type, storage, and access permissions.
-- `fs.tf`: Defines resources related to file storage, such as buckets and access controls.
-- `load_balancer.tf`: Defines resources related to load balancers and networking configurations.
-- `main.tf`: The main Terraform configuration file that orchestrates the provisioning of various resources.
-- `variables.tf`: Defines input variables used in the Terraform configuration files.
 
 #### Usage
 1. **Installation**: Ensure Terraform is installed on your local machine.
@@ -216,10 +217,13 @@ This dataset is popular among data scientists and analysts for exploring eCommer
    - Choose appropriate cloud services and infrastructure tools for data storage, processing, and orchestration.
    - Define the steps for data ingestion, transformation, loading into data lakes and data warehouses, and dashboard creation.
 
-* **Batch**: If you want to run things periodically (/daily) in mage
+![](images/pipelines_in_mage.png)
+
 
 ![](images/loading_from_api_transformations_to_gcs_partitioned.png)
 
+#### Files and Directories
+```
 └── mage-ai-Workflow-Orchestration
     ├── magic-zoomcamp
         ├── pipelines
@@ -230,11 +234,13 @@ This dataset is popular among data scientists and analysts for exploring eCommer
         |   └── transform_and_clean_api_data.py
         └── data_exporters
             └── export_data_to_google_cloud_stoage_partitioned.py
-
+```
 
 
 ![](images/loading_from_google_cloud_storage_to_bigquery_table.png)
 
+#### Files and Directories
+```
 └── mage-ai-Workflow-Orchestration
     ├── magic-zoomcamp
         ├── pipelines
@@ -243,34 +249,69 @@ This dataset is popular among data scientists and analysts for exploring eCommer
         │   └── load_data_from_google_cloud_storage.py
         └─ data_exporters
             └── export_data_to_google_bigquery.py
+```
 
 ![](images/trigger_for_mage.png)
 
 * **Batch**: If you want to run things periodically (/daily) in mage
 
 
-
-
-
 5. **Implement Data Pipelines**:
    - Implement workflow orchestration using tools such as Mage to Develop batch processing and managing pipeline execution.
 
-6. **Perform Data Transformations**:
+
+
+6. **PERFORM DATA TRANSFORMATIONS**:
    - Apply transformations using dedicated data transformation tools like dbt to prepare data for analytics.
    - Ensure data quality and consistency through validation and cleansing processes.
+![](images/dbt_lineage_graph_DAG.png)
+![](images/dbt_project_overview.png)
 
-7. **Build the Dashboard**:
-   - Choose a BI tool such as Data Studio for creating the dashboard.
-   - Design intuitive visualizations that provide insights into the processed data.
+#### Files and Directories
 
-8. **Documentation and Testing**:
+```
+├── dbt-Analytics_Engineering(Data Build Tool)
+│   ├── dbt_project.yml
+│   └── models
+│       ├── core
+│       │   ├── fact_online_retail_data_partitioned_clustered.sql
+│       │   └── fact_online_retail_data_unpartitioned.sql
+│       └── staging
+│           ├── schema.yml
+│           └── stg_online_retail_data.sql
+```
+![](images/dbt_deploy_job_12hrs.png)
+
+8. **DOCUMENTATION AND TESTING**:
    - Document the project setup, data pipeline architecture, and dashboard components in a README file.
 
+#### Files and Directories
+```
+├── dbt-Analytics_Engineering(Data Build Tool)
+│   ├── dbt_project.yml
+│   ├── models
+│   │   └── staging
+│   │       └── schema.yml
+│   └── tests
+```
+
+# **BUILD THE DASHBOARD**:
+   - Choose a BI tool such as Data Studio for creating the dashboard.
+   - Design intuitive visualizations that provide insights into the processed data.
+#### Files and Directories
+```
+├── Looker_studio_Dashboard
+```
+
+# (CI/CD)-CONTINOUS-INTERGRATION-AND-DEPLOYMENT
 
 
+#### Files and Directories
+```
+├── (CI.CD)-Continous-Intergration-and-Deployment
+│   └── cloudbuild.yaml
+```
 
-
-3. Online Retail Data: Transactional data from an online retail platform, enabling analysis of sales trends, customer behavior, and product performance.
 
 
 
@@ -595,11 +636,9 @@ staging
 core - fact tables
 
 
-![](images/dbt_deploy_job_12hrs.png)
-![](images/dbt_lineage_graph_DAG.png)
-![](images/dbt_project_overview.png)
+
+
+
+![](images/stg_online_retail_data.png)
 ![](images/fact_online_retail_data_partitioned_clustered.png)
 ![](images/fact_online_retail_data_unpartitioned.png)
-
-![](images/pipelines_in_mage.png)
-![](images/stg_online_retail_data.png)
