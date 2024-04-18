@@ -223,25 +223,38 @@ Following successful CI, the CD pipeline takes over. It automatically deploys th
 
 
 # **DASHBOARD**:
-   - Using Looker Studio as BI tool for creating the dashboard.
-   - Design intuitive visualizations that provide insights into the processed data.
+Visualizing insights from data is crucial for understanding trends, patterns, and opportunities. Here's how I designed the dashboard using Looker Studio:
+
+### BI Tool: Looker Studio
+Looker Studio provides a user-friendly interface for building and customizing dashboards, allowing for intuitive visualization of data insights.
 
 #### Files and Directories
-
 ```
-├── Looker_studio_Dashboard
+└── Looker_studio_Dashboard
     └── online_retail_data_Report.pdf
 ```
 
-### graphs
-* What products sold the most?
-* Which countries have more customers?
-* which day has more number of sales?
-* What was the best month for sales?
+### Dashboard Insights
+The dashboard provides several key insights into the processed data:
 
-LINK: https://lookerstudio.google.com/reporting/01e1481a-ff43-49fc-b04a-29bd75afd77d
+1. **Top Selling Products**:
+   - Visualizes the products that sold the most, providing insights into popular items and potential revenue drivers.
 
-![View Online Retail Data Report](images/online_retail_analytics.png)
+2. **Customer Distribution by Country**:
+   - Highlights countries with the highest number of customers, aiding in understanding the geographic distribution of your customer base.
+
+3. **Daily Sales Trend**:
+   - Illustrates the daily sales trend, identifying peak sales days and potential factors influencing sales fluctuations.
+
+4. **Monthly Sales Overview**:
+   - Presents an overview of monthly sales, helping to identify trends and seasonality in sales performance.
+
+### Dashboard Link
+[View Online Retail Data Report](https://lookerstudio.google.com/reporting/01e1481a-ff43-49fc-b04a-29bd75afd77d)
+
+![Online Retail Analytics Dashboard](images/online_retail_analytics.png)
+
+Feel free to explore the dashboard using the provided link to gain deeper insights into the online retail data.
 
 
 ## **CONCLUSION**
