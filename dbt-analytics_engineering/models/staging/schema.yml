@@ -1,0 +1,88 @@
+version: 2
+
+sources:
+  - name: staging
+    database: direct-disk-412820
+    schema: online_retail
+
+    tables:
+      - name: online_retail_data
+
+
+models:
+  - name: stg_online_retail_data
+    description: >
+      Dataset containing online retail data, including information about invoices, products, customers, and transactions.
+    columns:
+      - name: transaction_id
+        description: Primary key for this table, generated with a concatenation of invoice_no+invoice_datetime
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+      - name: invoice_no
+        description: The code representing the invoice number.
+        tests:
+          - not_null:
+              severity: warn
+      - name: stock_code
+        description: The code representing the product in the inventory.
+        tests:
+          - not_null:
+              severity: warn
+      - name: description
+        description: Description of the product.
+        tests:
+          - not_null:
+              severity: warn
+      - name: quantity
+        description: The quantity of products purchased in the invoice.
+        tests:
+          - not_null:
+              severity: warn
+      - name: invoice_datetime
+        description: The date and time when the invoice was issued.
+        tests:
+          - not_null:
+              severity: warn
+      - name: unit_price
+        description: The price of a single unit of the product.
+        tests:
+          - not_null:
+              severity: warn
+      - name: customer_id
+        description: The unique identifier for the customer.
+        tests:
+          - not_null:
+              severity: warn
+      - name: country
+        description: The country where the transaction occurred.
+        tests:
+          - not_null:
+              severity: warn
+      - name: total_price
+        description: The total amount charged for the transaction.
+        tests:
+          - not_null:
+              severity: warn
+      - name: time_
+        description: The time of the transaction.
+        tests:
+          - not_null:
+              severity: warn
+      - name: month
+        description: The month of the transaction.
+        tests:
+          - not_null:
+              severity: warn
+      - name: day
+        description: The day of the transaction.
+        tests:
+          - not_null:
+              severity: warn
+      - name: year
+        description: The year of the transaction.
+        tests:
+          - not_null:
+              severity: warn
