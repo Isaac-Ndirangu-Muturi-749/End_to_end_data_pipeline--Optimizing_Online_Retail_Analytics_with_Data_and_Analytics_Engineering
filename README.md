@@ -81,33 +81,16 @@
     │           └── spirited_hill
     ├── magic-zoomcamp
     │   ├── __init__.py
-    │   ├── __pycache__
-    │   │   └── __init__.cpython-310.pyc
     │   ├── charts
     │   │   ├── __init__.py
-    │   │   └── __pycache__
-    │   │       └── __init__.cpython-310.pyc
     │   ├── custom
     │   │   ├── __init__.py
-    │   │   └── __pycache__
-    │   │       └── __init__.cpython-310.pyc
     │   ├── data_exporters
     │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   │   ├── __init__.cpython-310.pyc
-    │   │   │   ├── cosmic_firefly.cpython-310.pyc
-    │   │   │   ├── export_titanic_clean.cpython-310.pyc
-    │   │   │   └── soulful_night.cpython-310.pyc
     │   │   ├── export_data_to_google_bigquery.py
     │   │   └── export_data_to_google_cloud_stoage_partitioned.py
     │   ├── data_loaders
     │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   │   ├── __init__.cpython-310.pyc
-    │   │   │   ├── load_api_data.cpython-310.pyc
-    │   │   │   ├── load_titanic.cpython-310.pyc
-    │   │   │   ├── moonlit_water.cpython-310.pyc
-    │   │   │   └── red_portal.cpython-310.pyc
     │   │   ├── daring_ancient.py
     │   │   ├── enigmatic_sky.py
     │   │   ├── load_data_from_api.py
@@ -128,42 +111,26 @@
     │   │   └── mindful_silversmith.yaml
     │   ├── extensions
     │   │   ├── __init__.py
-    │   │   └── __pycache__
-    │   │       └── __init__.cpython-310.pyc
     │   ├── interactions
     │   │   ├── __init__.py
-    │   │   └── __pycache__
-    │   │       └── __init__.cpython-310.pyc
     │   ├── io_config.yaml
     │   ├── metadata.yaml
     │   ├── pipelines
     │   │   ├── __init__.py
     │   │   ├── loading_from_api_transformations_to_gcs_partitioned
     │   │   │   ├── __init__.py
-    │   │   │   ├── __pycache__
-    │   │   │   │   └── __init__.cpython-310.pyc
     │   │   │   └── metadata.yaml
     │   │   └── loading_from_google_cloud_storage_to_bigquery_table
     │   │       ├── __init__.py
-    │   │       ├── __pycache__
-    │   │       │   └── __init__.cpython-310.pyc
     │   │       └── metadata.yaml
     │   ├── requirements.txt
     │   ├── scratchpads
     │   │   ├── __init__.py
-    │   │   └── __pycache__
-    │   │       └── __init__.cpython-310.pyc
     │   ├── transformers
     │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   │   ├── __init__.cpython-310.pyc
-    │   │   │   ├── fill_in_missing_values.cpython-310.pyc
-    │   │   │   └── radiant_destiny.cpython-310.pyc
     │   │   └── transform_and_clean_api_data.py
     │   └── utils
     │       ├── __init__.py
-    │       └── __pycache__
-    │           └── __init__.cpython-310.pyc
     └── requirements.txt
 ```
 
