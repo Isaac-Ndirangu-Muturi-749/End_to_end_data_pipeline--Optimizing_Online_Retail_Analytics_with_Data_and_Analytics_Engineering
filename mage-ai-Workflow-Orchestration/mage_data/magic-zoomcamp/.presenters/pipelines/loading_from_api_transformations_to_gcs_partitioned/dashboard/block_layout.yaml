@@ -1,0 +1,8 @@
+blocks:
+  proud_core:
+    name: proud core
+    type: chart
+    uuid: proud_core
+layout:
+- - block_uuid: proud_core
+    width: 1

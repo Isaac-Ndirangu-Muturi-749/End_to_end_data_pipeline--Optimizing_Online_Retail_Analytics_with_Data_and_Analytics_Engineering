@@ -319,3 +319,72 @@ $ tree
 52 directories, 91 files
 ndirangu749@de-zoomcamp ~/capstone_de_zoom
 $
+
+data
+
+A well-known dataset is the "Online Retail" dataset from the UCI Machine Learning Repository. This dataset contains transactional data from an online retail platform and is suitable for analyzing sales trends, customer behavior, and product performance.
+
+Here are some details about the "Online Retail" dataset:
+
+- **Source**: UCI Machine Learning Repository
+- **Description**: This dataset contains transactional data from an online retail store based in the United Kingdom. The data includes customer information, product details, invoice numbers, transaction dates, and sales quantities. It covers transactions that occurred between 01/12/2010 and 09/12/2011.
+- **Features**: The dataset includes attributes such as InvoiceNo, StockCode, Description, Quantity, InvoiceDate, UnitPrice, CustomerID, and Country.
+- **Format**: The dataset is typically provided in a CSV (Comma Separated Values) format.
+- **Size**: The dataset is relatively small, with around 500,000 records.
+
+You can find the "Online Retail" dataset on the UCI Machine Learning Repository website. Here is the direct link: [Online Retail Dataset](https://archive.ics.uci.edu/ml/datasets/online+retail).
+
+This dataset is popular among data scientists and analysts for exploring eCommerce sales data, performing market basket analysis, and building recommendation systems. It's a great choice for your data engineering project as it provides rich transactional data that can be used for various analyses and insights.
+
+
+terraform - Iaas
+
+data - db.tf postgres 14
+load_balancer.tf
+fs.tf - filesystem Gcs
+main.tf
+variables.tf = variables
+
+
+
+
+
+pipelines
+1. loading_from_google_cloud_storage_to_bigquery_table
+2. loading_from_api_transformations_to_gcs_partitioned
+
+data_loader
+
+
+transformer
+
+
+data_exporter
+
+load_data_from_api
+
+
+transform_and_clean_api_data
+
+
+export_data_to_google_cloud_stoage_partitioned
+
+
+
+trigger for mage
+
+
+dbt
+
+documentation link = https://cloud.getdbt.com/accounts/246257/jobs/576492/docs/#!/overviewhttps://cloud.getdbt.com/accounts/246257/jobs/576492/docs/#!/overview
+
+
+lineage graph
+
+link for each model scripts
+
+source
+staging
+core - fact tables
+
+
