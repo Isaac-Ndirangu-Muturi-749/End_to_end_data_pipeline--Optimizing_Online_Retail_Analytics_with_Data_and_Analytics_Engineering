@@ -1,6 +1,7 @@
 steps:
 # running docker-compose
 - name: 'docker/compose:1.29.2'
+  entrypoint: 'docker-compose'
   args: ['up', '-d']
 
 options:
