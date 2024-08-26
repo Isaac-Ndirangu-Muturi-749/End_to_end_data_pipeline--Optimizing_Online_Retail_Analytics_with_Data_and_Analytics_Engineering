@@ -1,4 +1,4 @@
-# End_to_end_data_pipeline---Optimizing_Online_Retail_Analytics_with_Data_and_Analytics_Engineering
+# End to end data pipeline: Optimizing Online Retail Analytics with Data and Analytics Engineering
 
 ![](images/data_analytics_pipeline.png)
 
